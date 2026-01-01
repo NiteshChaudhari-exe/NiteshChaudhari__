@@ -1,8 +1,12 @@
+
 # 🚀 Modern Developer Portfolio
 
->A beautiful, blazing-fast, and fully responsive developer portfolio built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
+> A beautiful, blazing-fast, and fully responsive developer portfolio built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
-![Live Preview]()
+![Live Preview](https://your-live-site-link.com/preview.png)
+
+---
+
 
 ## ✨ Features
 
@@ -14,13 +18,17 @@
 - SEO optimized and mobile-first design
 - Toast notifications and loading screen
 - Modular, maintainable code structure
+- **Animated gradient heart icon in the footer**
 
-## 🛠️ Tech Stack
+
+## 🛠️ Tech Stack & Dependencies
 
 - **Frontend:** React 19, TypeScript, Vite
 - **Styling:** Tailwind CSS, Framer Motion, Lucide Icons
 - **UI/UX:** Responsive design, custom components, dark mode
 - **Other:** ESLint, Prettier, Shadcn, OGL, React Icons
+- **Animation:** Custom CSS/SVG for animated icons
+
 
 ## 📁 Project Structure
 
@@ -40,6 +48,7 @@
 ├── package.json
 └── ...
 ```
+
 
 ## 🚦 Getting Started
 
@@ -67,11 +76,14 @@
    yarn build
    ```
 
+
 ## 📝 Customization
 
 - Update your info, images, and content in the `src/components` and `src/assets` folders.
 - Edit theme, colors, and layout in `tailwind.config.js` and `src/styles/globals.css`.
 - Add or remove sections as needed for your personal brand.
+- To customize the animated heart, edit `src/components/Footer.tsx` and `src/components/footer-heart-animate.css`.
+
 
 ## 📦 Available Scripts
 
@@ -79,6 +91,16 @@
 - `npm run build` — Build for production
 - `npm run preview` — Preview production build
 - `npm run lint` — Lint code with ESLint
+
+
+## 📸 Screenshots
+
+Add screenshots or GIFs here to showcase your portfolio UI and animations:
+
+![Home Section](https://your-live-site-link.com/screenshot-home.png)
+![Projects Section](https://your-live-site-link.com/screenshot-projects.png)
+
+---
 
 ## 📄 License
 
