@@ -1,13 +1,11 @@
-import React from 'react';
-import LogoLoop from '../components/LogoLoop';
+import '../customTransitions.css';
+import LogoLoop from '../LogoLoop';
 import {
-  SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiJavascript, SiHtml5, SiCss3, SiRedux, SiSass, SiBootstrap, SiVite, SiGit, SiFigma,
-  SiFramer, SiGreensock, SiThreedotjs, SiBlender,
+  SiHtml5, SiCss3, SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiRedux, SiTailwindcss, SiSass, SiBootstrap, SiVite, SiGit, SiFigma,
+  SiMui, SiChakraui, SiStyledcomponents, SiWebpack, SiEslint, SiPrettier, SiStorybook, SiCypress, SiFramer, SiGreensock, SiThreedotjs, SiBlender, SiSvg,
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, SiMysql, SiGraphql, SiDocker, SiFirebase, SiPrisma, SiPython, SiDjango,
-  SiKalilinux, SiWireshark, SiMetasploit, SiBurpsuite, SiLinux, SiGnubash, SiGithub,
-  SiMui, SiChakraui, SiStyledcomponents, SiWebpack, SiBabel, SiEslint, SiPrettier, SiStorybook, SiCypress, SiSvg,
-  SiApollographql, SiSwagger, SiRedis, SiSupabase, SiNetlify, SiVercel, SiHeroku, SiJest, SiMocha, SiGithubactions, SiTravisci, SiCircleci,
-  SiOwasp, SiTorbrowser, SiOpenssl, SiVirtualbox, SiVmware, SiGooglecloud, SiDigitalocean, SiTerraform, SiKubernetes,
+  SiApollographql, SiSwagger, SiRedis, SiSupabase, SiNetlify, SiVercel, SiHeroku, SiJest, SiMocha, SiGithubactions,
+  SiKalilinux, SiWireshark, SiMetasploit, SiBurpsuite, SiLinux, SiGnubash, SiGithub, SiOwasp, SiTorbrowser, SiOpenssl, SiVirtualbox, SiVmware, SiGooglecloud,
   SiMarkdown, SiNotion, SiSlack, SiTrello, SiJira, SiZapier
 } from 'react-icons/si';
 
@@ -80,9 +78,9 @@ const techLogos = [
   { node: <SiZapier />, title: "Zapier", href: "https://zapier.com/" },
 ];
 
-function Logoloop(): JSX.Element {
+function Logoloop() {
   return (
-    <div style={{ height: '200px', position: 'relative', overflow: 'hidden'}}>
+    <div className="logoloop-container">
       {/* Basic horizontal loop */}
       <LogoLoop
         logos={techLogos}

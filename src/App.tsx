@@ -1,22 +1,21 @@
 import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Experience } from './components/Experience';
-import { Skills } from './components/Skills';
-import { Projects } from './components/Projects';
-import { Certifications } from './components/Certifications';
-import { Testimonials } from './components/Testimonials';
-import { Blog } from './components/Blog';
-import { Contact } from './components/Contact';
-import { Navigation } from './components/Navigation';
-import { Footer } from './components/Footer';
-import { ScrollToTop } from './components/ScrollToTop';
-import { LoadingScreen } from './components/LoadingScreen';
-// import { StatsCounter } from './components/StatsCounter';
+import React, { Suspense, useEffect } from 'react';
 import { ToastContainer } from './components/Toast';
 import { SEO } from './components/SEO';
 import { ThemeProvider } from './contexts/ThemeContext';
-import { useEffect } from 'react';
-import  Logoloop  from './components/pages/Logoloop';
+const About = React.lazy(() => import('./components/About').then(m => ({ default: m.About })));
+const Experience = React.lazy(() => import('./components/Experience').then(m => ({ default: m.Experience })));
+const Skills = React.lazy(() => import('./components/Skills').then(m => ({ default: m.Skills })));
+const Projects = React.lazy(() => import('./components/Projects').then(m => ({ default: m.Projects })));
+const Certifications = React.lazy(() => import('./components/Certifications').then(m => ({ default: m.Certifications })));
+const Testimonials = React.lazy(() => import('./components/Testimonials').then(m => ({ default: m.Testimonials })));
+const Blog = React.lazy(() => import('./components/Blog').then(m => ({ default: m.Blog })));
+const Contact = React.lazy(() => import('./components/Contact').then(m => ({ default: m.Contact })));
+const Navigation = React.lazy(() => import('./components/Navigation').then(m => ({ default: m.Navigation })));
+const Footer = React.lazy(() => import('./components/Footer').then(m => ({ default: m.Footer })));
+const ScrollToTop = React.lazy(() => import('./components/ScrollToTop').then(m => ({ default: m.ScrollToTop })));
+const LoadingScreen = React.lazy(() => import('./components/LoadingScreen').then(m => ({ default: m.LoadingScreen })));
+const Logoloop = React.lazy(() => import('./components/pages/Logoloop'));
 
 export default function App() {
   useEffect(() => {
@@ -51,25 +50,27 @@ export default function App() {
   return (
     <ThemeProvider>
       <SEO />
-      <LoadingScreen />
-      <ToastContainer />
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-        <Navigation />
-        <main>
-          <Hero />
-          <About />
-          <Experience />
-          <Skills />
-          <Logoloop />
-          <Projects />
-          <Certifications />
-          <Testimonials />
-          <Blog />
-          <Contact />
-        </main>
-        <Footer />
-        <ScrollToTop />
-      </div>
+      <Suspense fallback={<div className="w-full h-screen flex items-center justify-center">Loading...</div>}>
+        <LoadingScreen />
+        <ToastContainer />
+        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+          <Navigation />
+          <main>
+            <Hero />
+            <About />
+            <Experience />
+            <Skills />
+            <Logoloop />
+            <Projects />
+            <Certifications />
+            <Testimonials />
+            <Blog />
+            <Contact />
+          </main>
+          <Footer />
+          <ScrollToTop />
+        </div>
+      </Suspense>
     </ThemeProvider>
   );
 }

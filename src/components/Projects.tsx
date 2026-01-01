@@ -1,3 +1,4 @@
+import '../components/customTransitions.css';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useState } from 'react';
@@ -109,12 +110,12 @@ export function Projects() {
             <h2 className={`text-gray-900 dark:text-white mb-4 text-center transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}>
               Featured Projects
             </h2>
-            <p className={`text-gray-600 dark:text-gray-400 text-center mb-8 max-w-2xl mx-auto transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '150ms' }}>
+            <p className={`text-gray-600 dark:text-gray-400 text-center mb-8 max-w-2xl mx-auto transition-all duration-1000 ease-out fade-delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
               A selection of recent work that showcases my skills and creativity
             </p>
 
             {/* Category Filter */}
-            <div className={`flex justify-center gap-4 mb-12 flex-wrap transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '200ms' }}>
+            <div className={`flex justify-center gap-4 mb-12 flex-wrap transition-all duration-1000 ease-out fade-delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
               {categories.map((category) => (
                 <button
                   key={category}
@@ -135,8 +136,8 @@ export function Projects() {
               {filteredProjects.map((project, index) => (
                 <div
                   key={index}
-                  className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-1000 ease-out border border-gray-200 dark:border-gray-700 group cursor-pointer ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 -rotate-2'}`}
-                  style={{ transitionDelay: isVisible ? `${300 + index * 150}ms` : '0ms' }}
+                  className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-1000 ease-out border border-gray-200 dark:border-gray-700 group cursor-pointer fade-delay-var ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 -rotate-2'}`}
+                  style={(isVisible ? { '--custom-delay': `${300 + index * 150}ms` } : { '--custom-delay': '0ms' }) as React.CSSProperties}
                   onClick={() => setSelectedProject(project)}
                 >
                   <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700">

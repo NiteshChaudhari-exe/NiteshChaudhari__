@@ -33,8 +33,8 @@ export function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`} style={{ transitionDelay: '200ms' }}>
               <img
-                src="/src/assets/me.jpg"
-                alt="Workspace"
+                src="/assets/me.jpg"
+                alt="Nitesh Chaudhari"
                 className="rounded-lg shadow-lg w-full h-auto hover:shadow-2xl transition-shadow duration-300"
               />
             </div>

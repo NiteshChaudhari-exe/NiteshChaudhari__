@@ -3,9 +3,11 @@
 
 > A beautiful, blazing-fast, and fully responsive developer portfolio built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
+
 ![Live Preview](https://your-live-site-link.com/preview.png)
 
 ---
+
 
 
 ## ✨ Features
@@ -19,6 +21,7 @@
 - Toast notifications and loading screen
 - Modular, maintainable code structure
 - **Animated gradient heart icon in the footer**
+- **Code-splitting for optimal performance**
 
 
 ## 🛠️ Tech Stack & Dependencies
@@ -50,6 +53,7 @@
 ```
 
 
+
 ## 🚦 Getting Started
 
 1. **Clone the repo:**
@@ -69,20 +73,47 @@
    # or
    yarn dev
    ```
+
 4. **Build for production:**
-   ```sh
-   npm run build
-   # or
-   yarn build
-   ```
+  ```sh
+  npm run build
+  # or
+  yarn build
+  ```
+
+5. **Preview the production build:**
+  ```sh
+  npm run preview
+  ```
+  Then open [http://localhost:4173](http://localhost:4173) (or the port shown in your terminal) to verify everything works as expected.
 
 
-## 📝 Customization
+
+## 🚀 Deployment
+
+This project is ready for deployment to any static hosting provider (Vercel, Netlify, GitHub Pages, etc.).
+
+**Production Checklist:**
+- [x] All build and runtime errors resolved
+- [x] All warnings (including Tailwind and chunk size) addressed
+- [x] Code-splitting implemented for faster load times
+- [x] Static assets (images, etc.) referenced from the public directory
+- [x] Previewed production build and verified all sections/images
+
+To deploy:
+1. Push your code to GitHub:
+  ```sh
+  git add .
+  git commit -m "Ready for deployment: code-splitting, image fixes, production build clean"
+  git push origin main
+  ```
+2. Connect your repository to your preferred static hosting provider and follow their deployment instructions.
 
 - Update your info, images, and content in the `src/components` and `src/assets` folders.
 - Edit theme, colors, and layout in `tailwind.config.js` and `src/styles/globals.css`.
 - Add or remove sections as needed for your personal brand.
 - To customize the animated heart, edit `src/components/Footer.tsx` and `src/components/footer-heart-animate.css`.
+
 
 
 ## 📦 Available Scripts
@@ -91,6 +122,7 @@
 - `npm run build` — Build for production
 - `npm run preview` — Preview production build
 - `npm run lint` — Lint code with ESLint
+
 
 
 ## 📸 Screenshots
@@ -111,76 +143,4 @@ This project is open source and available under the [MIT License](LICENSE).
 > Crafted with ❤️ by [Nitesh Chaudhari].
 
 
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```

@@ -1,3 +1,4 @@
+import '../components/customTransitions.css';
 import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
@@ -89,13 +90,13 @@ export function Contact() {
           <h2 className={`text-gray-900 dark:text-white mb-4 text-center transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}>
             Get In Touch
           </h2>
-          <p className={`text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`} style={{ transitionDelay: '150ms' }}>
+          <p className={`text-gray-600 dark:text-gray-400 text-center mb-12 max-w-2xl mx-auto transition-all duration-1000 ease-out fade-delay-150 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             Have a project in mind or just want to chat? Feel free to reach out!
           </p>
 
           <div className="grid md:grid-cols-2 gap-12">
             {/* Contact Information */}
-            <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`} style={{ transitionDelay: '300ms' }}>
+            <div className={`transition-all duration-1000 ease-out fade-delay-300 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`}>
               <h3 className="text-gray-900 dark:text-white mb-6">Contact Information</h3>
               
               <div className="space-y-4">
@@ -145,7 +146,7 @@ export function Contact() {
             </div>
 
             {/* Contact Form */}
-            <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-16 scale-95'}`} style={{ transitionDelay: '450ms' }}>
+            <div className={`transition-all duration-1000 ease-out fade-delay-450 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 translate-x-16 scale-95'}`}>
               <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div>
                   <label htmlFor="name" className="block text-gray-900 dark:text-white mb-2">

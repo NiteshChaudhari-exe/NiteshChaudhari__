@@ -1,0 +1,11 @@
+.fade-delay-150 { transition-delay: 150ms; }
+.fade-delay-200 { transition-delay: 200ms; }
+.fade-delay-300 { transition-delay: 300ms; }
+.fade-delay-450 { transition-delay: 450ms; }
+.fade-delay-var { transition-delay: var(--custom-delay, 0ms); }
+
+.logoloop-container {
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
