@@ -106,7 +106,7 @@ export function Contact() {
                   <div>
                     <p className="text-gray-900 dark:text-white mb-1">Email</p>
                     <a href="mailto:your.email@example.com" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                      your.email@example.com
+                      chaudharinitesh485@gmail.com
                     </a>
                   </div>
                 </div>
@@ -118,7 +118,7 @@ export function Contact() {
                   <div>
                     <p className="text-gray-900 dark:text-white mb-1">Phone</p>
                     <a href="tel:+1234567890" className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
-                      +1 (234) 567-890
+                      +977 9821750929
                     </a>
                   </div>
                 </div>
@@ -130,7 +130,7 @@ export function Contact() {
                   <div>
                     <p className="text-gray-900 dark:text-white mb-1">Location</p>
                     <p className="text-gray-600 dark:text-gray-400">
-                      San Francisco, CA
+                      Kathmandu, Nepal (Asia)
                     </p>
                   </div>
                 </div>

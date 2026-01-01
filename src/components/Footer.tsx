@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, Instagram } from 'lucide-react';
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -22,7 +22,7 @@ export function Footer() {
   const socialLinks = [
     { icon: Github, href: 'https://github.com', label: 'GitHub' },
     { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
+    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
     { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
   ];
 
@@ -33,9 +33,9 @@ export function Footer() {
           {/* Brand */}
           <div>
             <div className="w-12 h-12 mb-4 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white">
-              YN
+              N<Heart size={15} className="text-red-500 fill-red-500" />
             </div>
-            <p className="text-gray-400 mb-4">
+            <p className="text-gray-400 mb-4 hover:text-white transition-color hover:scale-105 duration-1000">
               Building amazing digital experiences with passion and precision.
             </p>
             <div className="flex gap-4">
@@ -65,7 +65,7 @@ export function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors hover:scale-105 duration-800"
                   >
                     {link.label}
                   </a>
@@ -82,7 +82,7 @@ export function Footer() {
                 <li key={index}>
                   <a
                     href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors"
+                    className="text-gray-400 hover:text-white transition-colors hover:scale-105 duration-800"
                   >
                     {link.label}
                   </a>
@@ -94,22 +94,26 @@ export function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-white mb-4">Get In Touch</h4>
-            <p className="text-gray-400 mb-2">your.email@example.com</p>
-            <p className="text-gray-400 mb-2">+1 (234) 567-890</p>
-            <p className="text-gray-400">San Francisco, CA</p>
+            <p className="text-gray-400 mb-2 hover:scale-105 duration-1000 hover:text-white transition-colors">chaudharinitesh485@gmail.com</p>
+            <p className="text-gray-400 mb-2 hover:scale-105 duration-1000 hover:text-white transition-colors">+977 9821750929</p>
+            <p className="text-gray-400 hover:scale-105 duration-1000 hover:text-white transition-colors">Kathmandu, Nepal (Asia)</p>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-gray-400 text-sm flex items-center gap-1">
-            © {currentYear} Your Name. Made with <Heart size={16} className="text-red-500 fill-red-500" /> and lots of coffee.
+          <p className="text-sm flex items-center gap-1 text-gray-400 hover:text-white transition-colors">
+            © {currentYear} Nitesh Chaudhari.
+           
           </p>
-          <div className="flex gap-6 text-sm">
+          <p className="text-gray-400 text-sm flex items-center gap-1 hover:text-white transition-colors">
+            Made with <Heart size={16} className="text-red-500 fill-red-500" /> and lots of coffee.
+          </p>
+          <div className="flex gap-6 text-sm text-gray-400 hover:text-white transition-colors">
             <a href="#" className="text-gray-400 hover:text-white transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-gray-400 hover:text-white transition-colors">
+            <a href="#" className="text-gray-400 hover:text-white transition-colors ">
               Terms of Service
             </a>
           </div>
@@ -118,3 +122,4 @@ export function Footer() {
     </footer>
   );
 }
+

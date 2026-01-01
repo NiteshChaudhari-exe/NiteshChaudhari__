@@ -10,10 +10,10 @@ interface SEOProps {
 }
 
 export function SEO({
-  title = 'Your Name - Full Stack Developer Portfolio',
+  title = 'Nitesh Chaudhari - Full Stack Developer',
   description = 'Professional portfolio showcasing web development projects, skills, and experience. Specializing in React, TypeScript, Node.js, and modern web technologies.',
   keywords = 'web developer, full stack developer, react developer, typescript, portfolio, frontend, backend, UI/UX',
-  author = 'Your Name',
+  author = 'Nitesh Chaudhari',
   image = '/og-image.jpg',
   url = 'https://yourwebsite.com',
 }: SEOProps) {
