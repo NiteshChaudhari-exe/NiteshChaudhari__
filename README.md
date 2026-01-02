@@ -4,7 +4,7 @@
 > A beautiful, blazing-fast, and fully responsive developer portfolio built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
 
-![Live Preview](https://niteshchaudhari.vercel.app/)
+![Live Preview](https://niteshchaudhari.vercel.app)
 
 ---
 
