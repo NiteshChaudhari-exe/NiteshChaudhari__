@@ -125,23 +125,24 @@ export function Navigation() {
           {/* Actions */}
           <div className="flex items-center gap-3">
             <a
-              href="#CV.pdf"
+              href="/CV.pdf"
               download
-              className="hidden md:flex items-center gap-2 px-4 py-2 text-white rounded-lg transition-all duration-500 hover:scale-105 text-sm"
+              className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-500 text-white dark:bg-blue-500 dark:text-white rounded-lg transition-all duration-500 hover:scale-105 text-sm border border-blue-400 shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
               aria-label="Download CV"
               style={{
-                border: '1px solid #38bdf8',
                 transition: 'border-color 0.5s, background 0.5s, box-shadow 0.4s',
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.borderColor = '#63CFEB';
-                e.currentTarget.style.background = 'rgba(99,207,235,0.08)';
+                e.currentTarget.style.background = '#63CFEB';
                 e.currentTarget.style.boxShadow = '0 0 18px 2px rgba(99,207,235,0.18)';
+                e.currentTarget.style.color = '#222';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.borderColor = '#38bdf8';
                 e.currentTarget.style.background = '';
                 e.currentTarget.style.boxShadow = '';
+                e.currentTarget.style.color = '';
               }}
             >
               <Download size={16} />

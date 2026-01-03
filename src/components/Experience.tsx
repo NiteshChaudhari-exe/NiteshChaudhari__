@@ -13,8 +13,8 @@ interface TimelineItem {
 
 const timeline: TimelineItem[] = [
   {
-    type: 'work',
-    title: 'Senior Full Stack Developer',
+    type: 'education',
+    title: 'B.Tech in Computer Science',
     organization: 'Tech Company Inc.',
     location: 'San Francisco, CA',
     period: '2022 - Present',
