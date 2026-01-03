@@ -4,7 +4,7 @@
 > A beautiful, blazing-fast, and fully responsive developer portfolio built with **React**, **TypeScript**, **Vite**, and **Tailwind CSS**.
 
 
-![Live Preview](https://your-live-site-link.com/preview.png)
+**Status:** [✅ Live Preview](https://niteshchaudhari.vercel.app/)
 
 ---
 
@@ -125,12 +125,6 @@ To deploy:
 
 
 
-## 📸 Screenshots
-
-Add screenshots or GIFs here to showcase your portfolio UI and animations:
-
-![Home Section](https://your-live-site-link.com/screenshot-home.png)
-![Projects Section](https://your-live-site-link.com/screenshot-projects.png)
 
 ---
 
