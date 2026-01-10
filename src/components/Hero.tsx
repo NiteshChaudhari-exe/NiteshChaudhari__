@@ -160,7 +160,7 @@ export function Hero() {
               className="flex items-center justify-center gap-6 pt-10"
             >
               <a 
-                href="https://github.com" 
+                href="https://github.com/NiteshChaudhari-exe/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-125"
@@ -169,7 +169,7 @@ export function Hero() {
                 <Github size={26} />
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/in/chaudhariniteshraj/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-125"
@@ -178,7 +178,7 @@ export function Hero() {
                 <Linkedin size={26} />
               </a>
               <a 
-                href="https://instagram.com/yourusername" 
+                href="https://www.instagram.com/oyee_nitesh__/" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-all duration-300 hover:scale-125"

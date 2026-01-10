@@ -20,10 +20,10 @@ export function Footer() {
   };
 
   const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Instagram, href: 'https://instagram.com', label: 'Instagram' },
-    { icon: Mail, href: 'mailto:your.email@example.com', label: 'Email' },
+    { icon: Github, href: 'https://github.com/NiteshChaudhari-exe/', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/in/chaudhariniteshraj/', label: 'LinkedIn' },
+    { icon: Instagram, href: 'https://www.instagram.com/oyee_nitesh__/', label: 'Instagram' },
+    { icon: Mail, href: 'mailto:chaudharinitesh485@gmail.com', label: 'Email' },
   ];
 
   return (

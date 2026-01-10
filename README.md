@@ -421,10 +421,29 @@ For more details, see [MIT License](https://opensource.org/licenses/MIT)
 
 Let's connect! Find me on:
 
-- **Portfolio:** [niteshchaudhari.vercel.app](https://niteshchaudhari.vercel.app/)
-- **GitHub:** [@NiteshChaudhari-exe](https://github.com/NiteshChaudhari-exe)
-- **Email:** Update in [Contact Component](src/components/Contact.tsx)
-- **LinkedIn:** Update in [Footer Component](src/components/Footer.tsx)
+| Platform | Link |
+|----------|------|
+| 💼 **GitHub** | [@NiteshChaudhari-exe](https://github.com/NiteshChaudhari-exe/) |
+| 🔗 **LinkedIn** | [@chaudhariniteshraj](https://www.linkedin.com/in/chaudhariniteshraj/) |
+| 📸 **Instagram** | [@oyee_nitesh__](https://www.instagram.com/oyee_nitesh__/) |
+| 📧 **Email** | [chaudharinitesh485@gmail.com](mailto:chaudharinitesh485@gmail.com) |
+| 🌐 **Portfolio** | [niteshchaudhari.vercel.app](https://niteshchaudhari.vercel.app/) |
+
+### Contact Information
+- **Email:** chaudharinitesh485@gmail.com
+- **Phone:** +977 9821750929
+- **Location:** Kathmandu, Nepal 🇳🇵
+- **Timezone:** Asia/Kathmandu
+
+### Get In Touch
+Feel free to reach out for:
+- 💼 Freelance projects and collaborations
+- 🤝 Partnership opportunities
+- 💡 Technical discussions and advice
+- 🎯 Web development inquiries
+- 📧 General inquiries and feedback
+
+**Response Time:** Usually within 24-48 hours
 
 ## 🙏 Acknowledgments
 

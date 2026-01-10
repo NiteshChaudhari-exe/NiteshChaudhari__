@@ -15,7 +15,7 @@ export function SEO({
   keywords = 'web developer, full stack developer, react developer, typescript, portfolio, frontend, backend, UI/UX',
   author = 'Nitesh Chaudhari',
   image = '/og-image.jpg',
-  url = 'https://yourwebsite.com',
+  url = 'https://niteshchaudhari.vercel.app',
 }: SEOProps) {
   useEffect(() => {
     // Set document title
