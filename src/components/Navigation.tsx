@@ -1,7 +1,7 @@
 import { Menu, X, Moon, Sun, Download } from 'lucide-react';
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { useTheme } from '../contexts/ThemeContext';
+import { useTheme } from '../contexts/useTheme';
 import { useActiveSection } from '../hooks/useActiveSection';
 import BlurText from '../components/BlurText';
 // import GradientText from '../components/GradientText';

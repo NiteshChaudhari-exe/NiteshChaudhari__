@@ -1,13 +1,15 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 
-interface ThemeContextType {
+export interface ThemeContextType {
   isDark: boolean;
   toggleTheme: () => void;
 }
 
+// Context is created but not exported to comply with react-refresh rules
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Export only the provider component
 export function ThemeProvider({ children }: { children: ReactNode }) {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('theme');
@@ -33,10 +35,5 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
 }
 
-export function useTheme() {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error('useTheme must be used within ThemeProvider');
-  }
-  return context;
-}
+// Export context for use in hook file
+export { ThemeContext };

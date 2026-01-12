@@ -61,7 +61,7 @@ export function Contact() {
       showToast('Thank you for your message! I will get back to you soon.', 'success');
       setFormData({ name: '', email: '', message: '' });
       setErrors({});
-    } catch (error) {
+    } catch {
       showToast('Something went wrong. Please try again.', 'error');
     } finally {
       setIsSubmitting(false);
