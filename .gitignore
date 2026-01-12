@@ -9,8 +9,15 @@ lerna-debug.log*
 
 node_modules
 dist
+dist-tsc
 dist-ssr
 *.local
+
+# Generated TypeScript output in src/
+src/**/*.js
+src/**/*.d.ts
+!src/**/*.tsx
+!src/**/*.ts
 
 # Editor directories and files
 .vscode/*
