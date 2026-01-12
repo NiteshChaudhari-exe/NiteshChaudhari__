@@ -13,6 +13,11 @@ dist-tsc
 dist-ssr
 *.local
 
+# Environment variables
+.env
+.env.local
+.env.*.local
+
 # Generated TypeScript output in src/
 src/**/*.js
 src/**/*.d.ts

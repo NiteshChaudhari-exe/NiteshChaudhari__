@@ -1,7 +1,21 @@
 {
-  "name": "portfolio--",
+  "name": "my-portfolio",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "description": "A beautiful, blazing-fast, and fully responsive developer portfolio built with React, TypeScript, Vite, and Tailwind CSS",
+  "author": "Nitesh Chaudhari",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NiteshChaudhari-exe/my-portfolio"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "typescript",
+    "vite",
+    "tailwind",
+    "developer"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",

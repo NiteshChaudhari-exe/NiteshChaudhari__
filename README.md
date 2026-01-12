@@ -83,7 +83,7 @@ my-portfolio/
     ├── 📱 App.tsx             # Root component
     ├── 🎨 index.css           # Global styles
     │
-    ├── 📦 components/
+    ├── 📦 components/         # React components (TypeScript only)
     │   ├── Hero.tsx           # Hero section with animations
     │   ├── About.tsx          # About/bio section
     │   ├── Skills.tsx         # Technical skills showcase
@@ -106,20 +106,20 @@ my-portfolio/
     │   │   └── Logoloop.tsx
     │   └── ui/                # Shadcn UI components
     │
-    ├── 🎭 contexts/
+    ├── 🎭 contexts/           # React contexts
     │   └── ThemeContext.tsx   # Dark mode theme provider
     │
-    ├── 🪝 hooks/
+    ├── 🪝 hooks/              # Custom React hooks
     │   ├── useActiveSection.ts   # Active section detection
     │   └── useScrollAnimation.ts # Scroll-triggered animations
     │
-    ├── 📚 lib/
-    │   └── utils.ts           # Utility functions
+    ├── 📚 lib/                # Utility libraries
+    │   └── utils.ts           # Helper functions
     │
-    ├── 🎨 styles/
-    │   └── globals.css        # Global styles
+    ├── 🎨 styles/             # Global styles
+    │   └── globals.css        # CSS variables and defaults
     │
-    └── 🔧 utils/
+    └── 🔧 utils/              # Utility functions
         └── toast.ts           # Toast notification utilities
 ```
 
@@ -156,7 +156,9 @@ my-portfolio/
    ```bash
    npm run build
    ```
-   Outputs optimized files to `dist/` directory
+   Outputs to:
+   - `dist/` — Production bundle (deploy this)
+   - `dist-tsc/` — TypeScript declarations (generated, not deployed)
 
 5. **Preview production build**
    ```bash
@@ -169,7 +171,7 @@ my-portfolio/
 | Command | Purpose | Output |
 |---------|---------|--------|
 | `npm run dev` | Start dev server with HMR | `http://localhost:5173` |
-| `npm run build` | Production build (TypeScript + Vite) | `dist/` folder |
+| `npm run build` | Production build (TypeScript compile + Vite bundle) | `dist-tsc/` (types) + `dist/` (bundle) |
 | `npm run preview` | Preview production locally | `http://localhost:4173` |
 | `npm run lint` | Check code quality with ESLint | Terminal output |
 
@@ -297,6 +299,12 @@ VITE_FORM_SERVICE=formspree
 - [x] Forms functional
 - [x] Links working
 - [x] Performance optimized
+
+### Build Output
+When you run `npm run build`:
+1. **TypeScript Compiler** (`tsc -b`) processes `.tsx/.ts` files → generates `dist-tsc/` with compiled JS and `.d.ts` declarations
+2. **Vite** bundles everything → creates optimized `dist/` for deployment
+3. Both directories are auto-generated and ignored by Git (see `.gitignore`)
 
 ## 🔍 SEO & Performance Optimizations
 
@@ -462,7 +470,10 @@ Built with ❤️ using modern technologies and best practices:
 
 If this project helped you, please consider:
 - ⭐ **Starring the repository**
-- 🔗 **Sharing with your network**
+- 🔗 **Sharing with you - 12Jan, 2026*
+
+### Project Status
+✅ **Fully Optimized** — Clean source structure with proper build output separationwork**
 - 💬 **Providing feedback**
 - 🤝 **Contributing improvements**
 
