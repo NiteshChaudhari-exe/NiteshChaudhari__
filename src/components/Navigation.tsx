@@ -6,10 +6,6 @@ import { useActiveSection } from '../hooks/useActiveSection';
 import BlurText from '../components/BlurText';
 // import GradientText from '../components/GradientText';
 
-const handleAnimationComplete = () => {
-  console.log("Animation completed!");
-};
-
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -86,7 +82,7 @@ export function Navigation() {
                 delay={900}
                 animateBy="words"
                 direction="top"
-                onAnimationComplete={handleAnimationComplete}
+                // onAnimationComplete={handleAnimationComplete}
                 className="text-2xl font-bold ml-4 text-gray-900 dark:text-white drop-shadow-sm"
               />
               {/* <GradientText
