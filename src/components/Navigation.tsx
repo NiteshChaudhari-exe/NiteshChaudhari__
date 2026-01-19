@@ -6,7 +6,6 @@ import { useActiveSection } from '../hooks/useActiveSection';
 import BlurText from '../components/BlurText';
 import './navigation.css';
 import type { NavItem } from '../types';
-// import GradientText from '../components/GradientText';
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -79,17 +78,9 @@ export function Navigation() {
                 delay={900}
                 animateBy="words"
                 direction="top"
-                // onAnimationComplete={handleAnimationComplete}
                 className="text-2xl font-bold ml-4 text-gray-900 dark:text-white drop-shadow-sm"
               />
-              {/* <GradientText
-  colors={["#5227FF","#FF9FFC","#9476f4","#9dfb50","#f75050","#38f2ff","#ffffff"]}
-  className="custom-class"
->
-  Add a splash of color!
-</GradientText> */}
             </div>
-           
           </a>
 
           {/* Desktop Navigation */}
