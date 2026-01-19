@@ -3,6 +3,7 @@ import React, { Suspense, useEffect } from 'react';
 import { ToastContainer } from './components/Toast';
 import { SEO } from './components/SEO';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { ErrorBoundary } from './components/ErrorBoundary';
 const About = React.lazy(() => import('./components/About').then(m => ({ default: m.About })));
 const Experience = React.lazy(() => import('./components/Experience').then(m => ({ default: m.Experience })));
 const Skills = React.lazy(() => import('./components/Skills').then(m => ({ default: m.Skills })));
@@ -49,28 +50,37 @@ export default function App() {
 
   return (
     <ThemeProvider>
-      <SEO />
-      <Suspense fallback={<div className="w-full h-screen flex items-center justify-center">Loading...</div>}>
-        <LoadingScreen />
-        <ToastContainer />
-        <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
-          <Navigation />
-          <main>
-            <Hero />
-            <About />
-            <Experience />
-            <Skills />
-            <Logoloop />
-            <Projects />
-            <Certifications />
-            <Testimonials />
-            <Blog />
-            <Contact />
-          </main>
-          <Footer />
-          <ScrollToTop />
-        </div>
-      </Suspense>
+      <ErrorBoundary>
+        <SEO />
+        {/* Skip to main content link for accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-50 focus:p-4 focus:bg-blue-600 focus:text-white focus:rounded-b-lg"
+        >
+          Skip to main content
+        </a>
+        <Suspense fallback={<div className="w-full h-screen flex items-center justify-center">Loading...</div>}>
+          <LoadingScreen />
+          <ToastContainer />
+          <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+            <Navigation />
+            <main id="main-content" role="main">
+              <Hero />
+              <About />
+              <Experience />
+              <Skills />
+              <Logoloop />
+              <Projects />
+              <Certifications />
+              <Testimonials />
+              <Blog />
+              <Contact />
+            </main>
+            <Footer />
+            <ScrollToTop />
+          </div>
+        </Suspense>
+      </ErrorBoundary>
     </ThemeProvider>
   );
 }

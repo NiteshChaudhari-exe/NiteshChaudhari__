@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone, Send } from 'lucide-react';
 import { useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { showToast } from '../utils/toast';
+import { sendContactForm, validateEmail, sanitizeInput } from '../lib/formService';
 
 interface FormErrors {
   name?: string;
@@ -31,7 +32,7 @@ export function Contact() {
 
     if (!formData.email.trim()) {
       newErrors.email = 'Email is required';
-    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    } else if (!validateEmail(formData.email)) {
       newErrors.email = 'Please enter a valid email address';
     }
 
@@ -55,14 +56,27 @@ export function Contact() {
 
     setIsSubmitting(true);
 
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      showToast('Thank you for your message! I will get back to you soon.', 'success');
-      setFormData({ name: '', email: '', message: '' });
-      setErrors({});
-    } catch {
-      showToast('Something went wrong. Please try again.', 'error');
+      // Sanitize inputs before sending
+      const sanitizedData = {
+        name: sanitizeInput(formData.name),
+        email: sanitizeInput(formData.email),
+        message: sanitizeInput(formData.message),
+      };
+
+      // Send form using configured service (EmailJS, Formspree, etc.)
+      const response = await sendContactForm(sanitizedData);
+      
+      if (response.success) {
+        showToast(response.message, 'success');
+        setFormData({ name: '', email: '', message: '' });
+        setErrors({});
+      } else {
+        showToast(response.message, 'error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      showToast('An unexpected error occurred. Please try again.', 'error');
     } finally {
       setIsSubmitting(false);
     }

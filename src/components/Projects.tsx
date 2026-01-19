@@ -2,6 +2,7 @@ import '../components/customTransitions.css';
 import { ExternalLink, Github, X } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { useState } from 'react';
+import './projects.css';
 
 interface Project {
   title: string;
@@ -136,8 +137,8 @@ export function Projects() {
               {filteredProjects.map((project, index) => (
                 <div
                   key={index}
-                  className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-1000 ease-out border border-gray-200 dark:border-gray-700 group cursor-pointer fade-delay-var ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 -rotate-2'}`}
-                  style={(isVisible ? { '--custom-delay': `${300 + index * 150}ms` } : { '--custom-delay': '0ms' }) as React.CSSProperties}
+                  className={`bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-1000 ease-out border border-gray-200 dark:border-gray-700 group cursor-pointer project-card ${isVisible ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-16 -rotate-2'}`}
+                  data-delay={index}
                   onClick={() => setSelectedProject(project)}
                 >
                   <div className="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700">

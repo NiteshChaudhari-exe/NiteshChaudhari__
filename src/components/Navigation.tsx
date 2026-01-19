@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/useTheme';
 import { useActiveSection } from '../hooks/useActiveSection';
 import BlurText from '../components/BlurText';
+import './navigation.css';
+import type { NavItem } from '../types';
 // import GradientText from '../components/GradientText';
 
 export function Navigation() {
@@ -50,15 +52,10 @@ export function Navigation() {
     return () => document.removeEventListener('keydown', handleEscape);
   }, [isOpen]);
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    // { label: 'Experience', href: '#experience' },
-    // { label: 'Skills', href: '#skills' },
     { label: 'Projects', href: '#projects' },
-    // { label: 'Certifications', href: '#certifications' },
-    // { label: 'Testimonials', href: '#testimonials' },
-    // { label: 'Blog', href: '#blog' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -123,23 +120,8 @@ export function Navigation() {
             <a
               href="/CV.pdf"
               download
-              className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-500 text-white dark:bg-blue-500 dark:text-white rounded-lg transition-all duration-500 hover:scale-105 text-sm border border-blue-400 shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300"
+              className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:scale-105 text-sm shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 cv-button"
               aria-label="Download CV"
-              style={{
-                transition: 'border-color 0.5s, background 0.5s, box-shadow 0.4s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = '#63CFEB';
-                e.currentTarget.style.background = '#63CFEB';
-                e.currentTarget.style.boxShadow = '0 0 18px 2px rgba(99,207,235,0.18)';
-                e.currentTarget.style.color = '#222';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = '#38bdf8';
-                e.currentTarget.style.background = '';
-                e.currentTarget.style.boxShadow = '';
-                e.currentTarget.style.color = '';
-              }}
             >
               <Download size={16} />
               <span>CV</span>
@@ -187,21 +169,7 @@ export function Navigation() {
             <a
               href="/CV.pdf"
               download
-              className="w-full mt-4 flex items-center justify-center gap-2 px-4 py- text-white rounded-lg transition-all duration-500"
-              style={{
-                border: '1px solid #38bdf8',
-                transition: 'border-color 0.5s, background 0.5s, box-shadow 0.4s',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.borderColor = '#63CFEB';
-                e.currentTarget.style.background = 'rgba(99,207,235,0.08)';
-                e.currentTarget.style.boxShadow = '0 0 18px 2px rgba(99,207,235,0.18)';
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.borderColor = '#38bdf8';
-                e.currentTarget.style.background = '';
-                e.currentTarget.style.boxShadow = '';
-              }}
+              className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2 text-white rounded-lg transition-all duration-500 cv-button-mobile"
             >
               <Download size={16} />
               <span>Download CV</span>

@@ -2,6 +2,7 @@ import { ArrowDown, Github, Linkedin, Instagram } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import LightRays from './LightRays';
+import './hero.css';
 
 const roles = ['Full Stack Developer', 'Cyber Security Specialist', 'Problem Solver', 'Tech Innovator'];
 
@@ -41,7 +42,7 @@ export function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 pt-16 relative overflow-hidden">
       {/* LightRays background */}
-      <div style={{ width: '100%', height: '950px', position: 'absolute', top: 0, left: 0, zIndex: 0 }}>
+      <div className="absolute inset-0 w-full h-[950px] top-0 left-0 z-0">
         <LightRays
           raysOrigin="top-center"
           raysColor="#00ffff"
@@ -58,7 +59,7 @@ export function Hero() {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 dark:bg-blue-400/5 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-400/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-400/10 dark:bg-purple-400/5 rounded-full blur-3xl animate-float-delayed"></div>
       </div>
 
       <div className="container mx-auto px-6 py-15 relative z-10">
@@ -112,41 +113,13 @@ export function Hero() {
             >
               <a
                 href="#contact"
-                className="px-8 py-3 text-white rounded-lg transition-all duration-900 hover:scale-105 relative overflow-hidden"
-                style={{
-                  background: 'linear-gradient(90deg,rgba(99, 207, 235, 1) 0%, rgba(118, 187, 222, 1) 10%, rgba(6, 29, 87, 1) 50%, rgba(100, 149, 176, 1) 90%, rgba(0, 212, 255, 1) 100%)',
-                  backgroundSize: '200% 200%',
-                  backgroundPosition: '0% 50%',
-                  boxShadow: '0 0 0 transparent',
-                  transition: 'background-position 0.8s cubic-bezier(0.4,0,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0,0.2,1)'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.backgroundPosition = '100% 50%';
-                  e.currentTarget.style.boxShadow = '0 0 24px 4px rgba(99,207,235,0.4)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.backgroundPosition = '0% 50%';
-                  e.currentTarget.style.boxShadow = '0 0 0 transparent';
-                }}
+                className="px-8 py-3 text-white rounded-lg transition-all duration-900 hover:scale-105 relative overflow-hidden hero-button-gradient"
               >
                 Get in Touch
               </a>
               <a
                 href="#projects"
-                className="px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-all duration-500 hover:scale-105 relative overflow-hidden"
-                style={{
-                  transition: 'border-color 0.5s, background 0.5s, box-shadow 0.4s',
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.borderColor = '#63CFEB';
-                  e.currentTarget.style.background = 'rgba(99,207,235,0.08)';
-                  e.currentTarget.style.boxShadow = '0 0 18px 2px rgba(99,207,235,0.18)';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.borderColor = '';
-                  e.currentTarget.style.background = '';
-                  e.currentTarget.style.boxShadow = '';
-                }}
+                className="px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-all duration-500 hover:scale-105 relative overflow-hidden hero-button-outline"
               >
                 View Work
               </a>

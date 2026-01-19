@@ -1,0 +1,28 @@
+# robots.txt
+# Generated for Nitesh Chaudhari Portfolio
+# See https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /.gitignore
+Disallow: /node_modules/
+
+# Sitemaps
+Sitemap: https://niteshchaudhari.vercel.app/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Other crawlers
+User-agent: *
+Allow: /
+Crawl-delay: 1

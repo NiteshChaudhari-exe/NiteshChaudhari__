@@ -1,0 +1,31 @@
+/* Projects Grid Animation Delays */
+
+.project-card {
+  transition-property: opacity, transform, box-shadow;
+  transition-duration: 1000ms;
+  transition-timing-function: ease-out;
+}
+
+.project-card[data-delay="0"] {
+  transition-delay: 300ms;
+}
+
+.project-card[data-delay="1"] {
+  transition-delay: 450ms;
+}
+
+.project-card[data-delay="2"] {
+  transition-delay: 600ms;
+}
+
+.project-card[data-delay="3"] {
+  transition-delay: 750ms;
+}
+
+.project-card[data-delay="4"] {
+  transition-delay: 900ms;
+}
+
+.project-card[data-delay="5"] {
+  transition-delay: 1050ms;
+}

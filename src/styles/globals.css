@@ -124,6 +124,15 @@
     @apply border-border outline-ring/50;
   }
 
+  /* Accessibility utilities */
+  .sr-only {
+    @apply absolute w-1 h-1 p-0 -m-1 overflow-hidden clip-path-none border-0;
+  }
+
+  .focus\:not-sr-only:focus {
+    @apply static w-auto h-auto p-0 m-0 overflow-visible clip-path-auto;
+  }
+
   body {
     @apply bg-background text-foreground;
     -webkit-font-smoothing: antialiased;

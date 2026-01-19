@@ -1,0 +1,24 @@
+/* CV Button Hover Effects */
+.cv-button {
+  transition: border-color 0.5s, background-color 0.5s, box-shadow 0.4s ease-out;
+  border: 1px solid #38bdf8;
+}
+
+.cv-button:hover {
+  border-color: #63cfeb;
+  background-color: #63cfeb;
+  box-shadow: 0 0 18px 2px rgba(99, 207, 235, 0.18);
+  color: #1f2937;
+}
+
+.cv-button-mobile {
+  transition: border-color 0.5s, background-color 0.5s, box-shadow 0.4s ease-out;
+  border: 1px solid #38bdf8;
+  background-color: transparent;
+}
+
+.cv-button-mobile:hover {
+  border-color: #63cfeb;
+  background-color: rgba(99, 207, 235, 0.08);
+  box-shadow: 0 0 18px 2px rgba(99, 207, 235, 0.18);
+}

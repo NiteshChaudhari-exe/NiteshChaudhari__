@@ -1,27 +1,13 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useState, useEffect } from 'react';
 
 export function About() {
   const { ref, isVisible } = useScrollAnimation(0.2);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const parallaxOffset = scrollY * 0.3;
 
   return (
     <section id="about" className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative">
       {/* Parallax Background Element */}
       <div 
         className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-400/10 dark:from-blue-400/5 dark:to-purple-400/5 rounded-full blur-3xl pointer-events-none"
-        style={{ transform: `translateY(${parallaxOffset}px)` }}
       ></div>
       
       <div className="container mx-auto px-6 relative z-10">
@@ -31,7 +17,7 @@ export function About() {
           </h2>
           
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className={`transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`} style={{ transitionDelay: '200ms' }}>
+            <div className={`transition-all duration-1000 ease-out delay-200 ${isVisible ? 'opacity-100 translate-x-0 scale-100' : 'opacity-0 -translate-x-16 scale-95'}`}>
               <img
                 src="/assets/me.jpg"
                 alt="Nitesh Chaudhari"
@@ -39,7 +25,7 @@ export function About() {
               />
             </div>
             
-            <div className={`space-y-4 transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'}`} style={{ transitionDelay: '400ms' }}>
+            <div className={`space-y-4 transition-all duration-1000 ease-out delay-[400ms] ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-16'}`}>
               <h3 className="text-gray-900 dark:text-gray-100 mb-4">Crafting Secure & Impactful Digital Solutions</h3>
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 I’m a full stack developer and cyber security enthusiast, passionate about building seamless, high-performance web applications that are as secure as they are beautiful. My experience spans startups, agencies, and enterprise teams, delivering everything from interactive landing pages to robust SaaS platforms—with security and privacy always top of mind.
