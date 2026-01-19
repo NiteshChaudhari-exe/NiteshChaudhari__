@@ -111,7 +111,7 @@ export function Navigation() {
             <a
               href="/CV.pdf"
               download
-              className="hidden md:flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:scale-105 text-sm shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 cv-button"
+              className="hidden md:flex min-h-10 min-w-fit items-center justify-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:scale-105 active:scale-95 text-sm shadow-sm hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-500 transition-all cv-button font-semibold"
               aria-label="Download CV"
             >
               <Download size={16} />
@@ -160,7 +160,7 @@ export function Navigation() {
             <a
               href="/CV.pdf"
               download
-              className="w-full mt-4 flex items-center justify-center gap-2 px-4 py-2 text-white rounded-lg transition-all duration-500 cv-button-mobile"
+              className="w-full mt-4 flex min-h-12 items-center justify-center gap-2 px-4 py-2 text-white rounded-lg transition-all duration-500 cv-button-mobile hover:scale-105 active:scale-95 font-semibold focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-500"
             >
               <Download size={16} />
               <span>Download CV</span>

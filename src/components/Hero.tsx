@@ -4,7 +4,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 import LightRays from './LightRays';
 import './hero.css';
 
-const roles = ['Full Stack Developer', 'Cyber Security Specialist', 'Problem Solver', 'Tech Innovator'];
+const roles = [
+  'Full Stack Developer',
+  'Cyber Security Specialist',
+  'Penetration Tester',
+  'Security Architect',
+  'Problem Solver',
+  'Tech Innovator',
+  'Ethical Hacker',
+  'DevSecOps Engineer',
+];
 
 export function Hero() {
     // Scroll to #home on mount to ensure home page appears on refresh
@@ -24,7 +33,7 @@ export function Hero() {
       if (!isDeleting) {
         setDisplayText(role.substring(0, displayText.length + 1));
         if (displayText === role) {
-          setTimeout(() => setIsDeleting(true), 2000);
+          setTimeout(() => setIsDeleting(true), 2500); // Increased pause to 2.5s
         }
       } else {
         setDisplayText(role.substring(0, displayText.length - 1));
@@ -35,7 +44,7 @@ export function Hero() {
       }
     };
 
-    const timeout = setTimeout(updateText, isDeleting ? 50 : 100);
+    const timeout = setTimeout(updateText, isDeleting ? 75 : 90); // Optimized: typing 90ms, deleting 75ms
     return () => clearTimeout(timeout);
   }, [displayText, isDeleting, currentRole]);
 
@@ -109,17 +118,17 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.9, delay: 3.0, ease: 'easeOut' }}
-              className="flex items-center justify-center gap-4 pt-10"
+              className="flex items-center justify-center gap-4 pt-10 flex-wrap"
             >
               <a
                 href="#contact"
-                className="px-8 py-3 text-white rounded-lg transition-all duration-900 hover:scale-105 relative overflow-hidden hero-button-gradient"
+                className="min-h-12 min-w-48 px-8 py-3 text-white rounded-lg transition-all duration-900 hover:scale-105 active:scale-95 relative overflow-hidden hero-button-gradient flex items-center justify-center font-semibold focus:outline-none focus:ring-2 focus:ring-blue-300 dark:focus:ring-blue-500"
               >
                 Get in Touch
               </a>
               <a
                 href="#projects"
-                className="px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-all duration-500 hover:scale-105 relative overflow-hidden hero-button-outline"
+                className="min-h-12 min-w-48 px-8 py-3 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg transition-all duration-500 hover:scale-105 active:scale-95 relative overflow-hidden hero-button-outline flex items-center justify-center font-semibold focus:outline-none focus:ring-2 focus:ring-gray-400 dark:focus:ring-gray-600"
               >
                 View Work
               </a>

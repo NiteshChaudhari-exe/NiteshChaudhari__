@@ -1,6 +1,16 @@
 import { useRef, useEffect, useState } from 'react';
 import { Renderer, Program, Triangle, Mesh } from 'ogl';
 
+// WebGL capability detection
+const isWebGLAvailable = (): boolean => {
+  try {
+    const canvas = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('webgl2')));
+  } catch {
+    return false;
+  }
+};
+
 export type RaysOrigin =
   | 'top-center'
   | 'top-left'
@@ -105,6 +115,7 @@ const LightRays: React.FC<LightRaysProps> = ({
   const meshRef = useRef<Mesh | null>(null);
   const cleanupFunctionRef = useRef<(() => void) | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [webGLSupported] = useState(isWebGLAvailable());
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -129,7 +140,7 @@ const LightRays: React.FC<LightRaysProps> = ({
   }, []);
 
   useEffect(() => {
-    if (!isVisible || !containerRef.current) return;
+    if (!isVisible || !containerRef.current || !webGLSupported) return;
 
     if (cleanupFunctionRef.current) {
       cleanupFunctionRef.current();
@@ -143,22 +154,23 @@ const LightRays: React.FC<LightRaysProps> = ({
 
       if (!containerRef.current) return;
 
-      const renderer = new Renderer({
-        dpr: Math.min(window.devicePixelRatio, 2),
-        alpha: true
-      });
-      rendererRef.current = renderer;
+      try {
+        const renderer = new Renderer({
+          dpr: Math.min(window.devicePixelRatio, 2),
+          alpha: true
+        });
+        rendererRef.current = renderer;
 
-      const gl = renderer.gl;
-      gl.canvas.style.width = '100%';
-      gl.canvas.style.height = '100%';
+        const gl = renderer.gl;
+        gl.canvas.style.width = '100%';
+        gl.canvas.style.height = '100%';
 
-      while (containerRef.current.firstChild) {
-        containerRef.current.removeChild(containerRef.current.firstChild);
-      }
-      containerRef.current.appendChild(gl.canvas);
+        while (containerRef.current.firstChild) {
+          containerRef.current.removeChild(containerRef.current.firstChild);
+        }
+        containerRef.current.appendChild(gl.canvas);
 
-      const vert = `
+        const vert = `
 attribute vec2 position;
 varying vec2 vUv;
 void main() {
@@ -370,6 +382,12 @@ void main() {
         uniformsRef.current = null;
         meshRef.current = null;
       };
+      } catch (error) {
+        if (import.meta.env.DEV) {
+          console.warn('WebGL initialization error:', error);
+        }
+        // Silently fail, fallback will be rendered
+      }
     };
 
     initializeWebGL();
@@ -393,7 +411,8 @@ void main() {
     followMouse,
     mouseInfluence,
     noiseAmount,
-    distortion
+    distortion,
+    webGLSupported
   ]);
 
   useEffect(() => {
@@ -446,6 +465,18 @@ void main() {
       return () => window.removeEventListener('mousemove', handleMouseMove);
     }
   }, [followMouse]);
+
+  // Fallback gradient for browsers without WebGL support
+  if (!webGLSupported) {
+    return (
+      <div
+        className={`w-full h-full pointer-events-none z-[3] overflow-hidden relative ${className}`.trim()}
+        style={{
+          background: 'radial-gradient(ellipse at top center, rgba(0, 255, 255, 0.1), transparent 70%)',
+        }}
+      />
+    );
+  }
 
   return (
     <div
