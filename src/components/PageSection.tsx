@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import type { Variants } from 'framer-motion';
 import React from 'react';
 
 interface PageSectionProps {
@@ -8,7 +9,7 @@ interface PageSectionProps {
   delay?: number;
 }
 
-const sectionVariants = {
+const sectionVariants: Variants = {
   hidden: {
     opacity: 0,
     y: 40,
@@ -32,7 +33,7 @@ export function PageSection({ id, children, className = '', delay = 0 }: PageSec
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants as any}
+      variants={sectionVariants}
       custom={delay}
     >
       {children}
