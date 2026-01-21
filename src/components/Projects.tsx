@@ -198,7 +198,7 @@ export function Projects() {
             </div>
           </div>
         </div>
-      </section>
+      </>
 
       {/* Project Modal */}
       {selectedProject && (

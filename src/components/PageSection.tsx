@@ -32,7 +32,7 @@ export function PageSection({ id, children, className = '', delay = 0 }: PageSec
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      variants={sectionVariants}
+      variants={sectionVariants as any}
       custom={delay}
     >
       {children}
