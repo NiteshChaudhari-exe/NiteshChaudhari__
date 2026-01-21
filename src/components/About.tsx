@@ -4,7 +4,7 @@ export function About() {
   const { ref, isVisible } = useScrollAnimation(0.2);
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative">
+    <>
       {/* Parallax Background Element */}
       <div 
         className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-400/10 to-purple-400/10 dark:from-blue-400/5 dark:to-purple-400/5 rounded-full blur-3xl pointer-events-none"
@@ -43,6 +43,6 @@ export function About() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }

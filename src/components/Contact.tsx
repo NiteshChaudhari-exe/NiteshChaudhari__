@@ -98,7 +98,7 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden">
+    <>
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto" ref={ref}>
           <h2 className={`text-gray-900 dark:text-white mb-4 text-center transition-all duration-1000 ease-out ${isVisible ? 'opacity-100 translate-y-0 scale-100' : 'opacity-0 translate-y-16 scale-95'}`}>
@@ -251,6 +251,6 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </>
   );
 }

@@ -4,6 +4,9 @@ import { ToastContainer } from './components/Toast';
 import { SEO } from './components/SEO';
 import { ThemeProvider } from './contexts/ThemeContext';
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { PageSection } from './components/PageSection';
+import { motion } from 'framer-motion';
+import './components/pageTransitions.css';
 const About = React.lazy(() => import('./components/About').then(m => ({ default: m.About })));
 const Experience = React.lazy(() => import('./components/Experience').then(m => ({ default: m.Experience })));
 const Skills = React.lazy(() => import('./components/Skills').then(m => ({ default: m.Skills })));
@@ -62,23 +65,82 @@ export default function App() {
         <Suspense fallback={<div className="w-full h-screen flex items-center justify-center">Loading...</div>}>
           <LoadingScreen />
           <ToastContainer />
-          <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+          <motion.div 
+            className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             <Navigation />
             <main id="main-content" role="main">
               <Hero />
-              <About />
-              <Experience />
-              <Skills />
-              <Logoloop />
-              <Projects />
-              <Certifications />
-              <Testimonials />
-              <Blog />
-              <Contact />
+              <PageSection 
+                id="about" 
+                className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative"
+                delay={0}
+              >
+                <About />
+              </PageSection>
+              <PageSection 
+                id="experience" 
+                className="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden relative"
+                delay={1}
+              >
+                <Experience />
+              </PageSection>
+              <PageSection 
+                id="skills" 
+                className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative"
+                delay={2}
+              >
+                <Skills />
+              </PageSection>
+              <PageSection 
+                id="logoloop" 
+                className="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden relative"
+                delay={3}
+              >
+                <Logoloop />
+              </PageSection>
+              <PageSection 
+                id="projects" 
+                className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative"
+                delay={4}
+              >
+                <Projects />
+              </PageSection>
+              <PageSection 
+                id="certifications" 
+                className="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden relative"
+                delay={5}
+              >
+                <Certifications />
+              </PageSection>
+              <PageSection 
+                id="testimonials" 
+                className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative"
+                delay={6}
+              >
+                <Testimonials />
+              </PageSection>
+              <PageSection 
+                id="blog" 
+                className="py-20 bg-gray-50 dark:bg-gray-800 overflow-hidden relative"
+                delay={7}
+              >
+                <Blog />
+              </PageSection>
+              <PageSection 
+                id="contact" 
+                className="py-20 bg-white dark:bg-gray-900 overflow-hidden relative"
+                delay={8}
+              >
+                <Contact />
+              </PageSection>
             </main>
             <Footer />
             <ScrollToTop />
-          </div>
+          </motion.div>
         </Suspense>
       </ErrorBoundary>
     </ThemeProvider>

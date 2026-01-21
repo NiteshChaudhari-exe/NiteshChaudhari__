@@ -1,0 +1,87 @@
+/* Page Transition Animations */
+
+/* Fade and slide up on page load */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered child animation */
+@keyframes staggerChild {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth scroll behavior for the entire app */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhance section visibility transitions */
+section {
+  will-change: transform, opacity;
+}
+
+/* Add background blur effect on section boundaries */
+@media (prefers-reduced-motion: no-preference) {
+  /* Smooth page transitions with easing */
+  .page-section {
+    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+/* For users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Section entrance effects */
+.section-enter {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.section-enter-delayed {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Optimize performance for transitions */
+.page-content {
+  contain: layout style paint;
+}
+
+/* Smooth navigation between sections */
+main {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Add depth to section transitions */
+section {
+  position: relative;
+  z-index: auto;
+}
+
+/* Prevent layout shift during transitions */
+body {
+  overflow-x: hidden;
+}
